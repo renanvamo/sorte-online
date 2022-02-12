@@ -27,7 +27,7 @@ export default function Card(props) {
         </section>
         <section className='cart-container'>
           <span className='add-to-cart' onClick={ handleClick }>
-            { onCart ? 'Remover': 'Adicionar' }
+            { onCart ? 'in the cart': 'add to cart' }
           </span>
         </section>
       </section>

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import StoreContext from '../context/StoreContext';
 import './styles/header.css';
 
 export default function Header() {
+  const { shoppingCart } = useContext(StoreContext);
   const navigate = useNavigate()
 
   const navigateTo = (path) => {
@@ -25,6 +27,9 @@ export default function Header() {
         <div className='nav-element' onClick={ () => navigateTo('/shopping-cart') }>
           <span className='btn'>
             Cart
+          </span>
+          <span>
+            { shoppingCart.length }
           </span>
         </div>
       </div>
