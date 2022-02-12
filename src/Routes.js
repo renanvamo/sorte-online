@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Store, ShoppingCart, NotFound } from './pages';
 
 export default function Router() {
   return (
