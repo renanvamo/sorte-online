@@ -1,0 +1,33 @@
+table, tr {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0.5rem;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  padding-left: 60px;
+}
+
+td div {
+  display: flex;
+  align-items: center;
+}
+
+table img {
+  width: 100px;
+  height: auto;
+  margin: 4px 0 4px 0;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  margin: 60px;
+}
+
+.total-price {
+  text-align: end;
+  padding: 20px 100px;
+}
