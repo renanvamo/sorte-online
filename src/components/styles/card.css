@@ -1,0 +1,27 @@
+.product-card {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 280px;
+  height: auto;
+  margin: 10px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.price, .price-discount {
+  margin-left: 10px;
+}
+
+.title {
+  text-align: center;
+}
