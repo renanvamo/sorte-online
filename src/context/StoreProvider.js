@@ -1,13 +1,8 @@
 import React from 'react';
 import StoreContext from './StoreContext';
-import productsJson from '../database/productList.json';
 
 function StoreProvider({ children }) {
-  const products = JSON.stringify(productsJson);
-
-  const args = {
-    products
-  };
+  const args = {};
 
   return (
     <StoreContext.Provider value={ args }>
