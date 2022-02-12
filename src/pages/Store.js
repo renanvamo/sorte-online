@@ -1,7 +1,10 @@
 import React from 'react';
+import Header from '../components/Header';
 
 export default function Store() {
   return (
-    <div>Store</div>
+    <div>
+      <Header />
+    </div>
   );
 }
