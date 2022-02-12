@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import StoreContext from '../context/StoreContext';
 import './styles/card.css'
 
 export default function Card(props) {
-  const { image, title, description, price, priceDiscount } = props;
+  const { id, image, title, description, price, priceDiscount } = props;
+  const { addToCart, removeFromCart } = useContext(StoreContext);
+  const [onCart, setOnCard] = useState(false);
+
+
+  const handleClick = () => {
+    const cart = { id, image, title, description, price, priceDiscount };
+    setOnCard(!onCart);
+    onCart ? removeFromCart(id) : addToCart(cart);
+  }
+  
   return (
     <div className='product-card'>
       <img className='card-image' src={ image } alt={ `imagem do produto ${title}` } />
@@ -14,7 +25,9 @@ export default function Card(props) {
           <span className='price-discount'>{ priceDiscount }</span>
         </section>
         <section className='cart-container'>
-          <span className='add-to-cart'>Add to Cart</span>
+          <span className='add-to-cart' onClick={ handleClick }>
+            { onCart ? 'Remover': 'Adicionar' }
+          </span>
         </section>
       </section>
     </div>
