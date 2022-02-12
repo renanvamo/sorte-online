@@ -18,7 +18,7 @@
   justify-content: space-around;
 }
 
-.price, .price-discount {
+.current-price, .old-price {
   margin-left: 10px;
 }
 
