@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import productsJson from '../database/productList.json';
 
 export default function Products() {
@@ -7,8 +7,10 @@ export default function Products() {
   useEffect(() => {
     const getProdutcs = () => {
       setProducts(JSON.stringify(productsJson));
-    }
-  })
+    };
+    getProdutcs();
+  });
+
   return (
     <div>
       {
