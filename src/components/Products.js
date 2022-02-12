@@ -1,12 +1,29 @@
-import React, { useContext } from 'react';
-import StoreContext from '../context/StoreContext';
+import React, { useContext, useEffect } from 'react';
+import productsJson from '../database/productList.json';
 
 export default function Products() {
-  const { products } = useContext(StoreContext);
-  console.log(products);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProdutcs = () => {
+      setProducts(JSON.stringify(productsJson));
+    }
+  })
   return (
     <div>
-      Todos os Produtos
+      {
+        products 
+          ? products.map((product, index) => (
+            <Card
+              key={ index }
+              id={ product.id }
+              image={ product.image }
+              description={ product.description }
+              price={ product.price }
+              priceDiscount={ product.priceDiscount }
+            />  
+          )) : 'Carregando produtos...'
+      }
     </div>
   );
 }
