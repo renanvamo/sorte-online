@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import productsJson from '../database/productList.json';
+import productsJson from '../database/productList';
+import './styles/products.css'
+import Card from './Card';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const getProdutcs = () => {
-      setProducts(JSON.stringify(productsJson));
+      setProducts(productsJson);
     };
     getProdutcs();
-  });
+  }, []);
 
   return (
-    <div>
+    <div className="store-cards-container">
       {
-        products 
-          ? products.map((product, index) => (
+        products
+          ? products.map((product) => (
             <Card
-              key={ index }
-              id={ product.id }
+              key={ product.id }
               image={ product.image }
+              title={ product.title }
               description={ product.description }
               price={ product.price }
               priceDiscount={ product.priceDiscount }
