@@ -16,7 +16,7 @@ export default function CartProducts() {
           </tr>
         </thead>
         { shoppingCart.map((item) => (
-          <tbody>
+          <tbody key={ item.id }>
             <tr>
               <td>
                 <div>

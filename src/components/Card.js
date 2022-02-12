@@ -1,17 +1,27 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import StoreContext from '../context/StoreContext';
 import PropTypes from 'prop-types';
 import './styles/card.css'
 
 export default function Card(props) {
   const { id, image, title, description, price, priceDiscount } = props;
-  const { addToCart, removeFromCart } = useContext(StoreContext);
-  const [onCart, setOnCard] = useState(false);
+  const { shoppingCart, addToCart, removeFromCart } = useContext(StoreContext);
+  const [onCart, setOnCart] = useState(false);
 
+  useEffect(() => {
+    const getProducts = () => {
+      shoppingCart.forEach((item) => {
+        if (item.id === id) {
+          setOnCart(true);
+        }
+      });
+    };
+    getProducts();
+  }, []);
 
   const handleClick = () => {
     const cart = { id, image, title, description, price, priceDiscount };
-    setOnCard(!onCart);
+    setOnCart(!onCart);
     onCart ? removeFromCart(id) : addToCart(cart);
   }
   
