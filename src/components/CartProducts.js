@@ -25,7 +25,7 @@ export default function CartProducts() {
                 </div>
               </td>
               <td>1</td>
-              <td>{ item.price }</td>
+              <td>{ item.priceDiscount ? item.priceDiscount : item.price }</td>
             </tr>
           </tbody>
         )) }

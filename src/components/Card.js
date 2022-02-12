@@ -32,9 +32,15 @@ export default function Card(props) {
       <p className='description' >{ description }</p>
       <section className='buttons-container'>
         <section className='prices-container'>
-          <span className='price'>{ price }</span>
-          <span className='price-discount'>{ priceDiscount }</span>
-        </section>
+          { priceDiscount ? (
+            <div>
+              <span className='price-discount'>{ priceDiscount }</span>
+              <span className='price'>{ price }</span>
+            </div>
+          ) : (
+            <span className='price'>{ price }</span>
+          )}
+          </section>
         <section className='cart-container'>
           <span className='add-to-cart' onClick={ handleClick }>
             { onCart ? 'in the cart': 'add to cart' }
