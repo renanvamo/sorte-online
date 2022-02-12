@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import StoreContext from '../context/StoreContext';
 import PropTypes from 'prop-types';
+import serializePrice from './utils/serialize'
 import './styles/card.css'
 
 export default function Card(props) {
@@ -20,7 +21,13 @@ export default function Card(props) {
   }, []);
 
   const handleClick = () => {
-    const cart = { id, image, title, description, price, priceDiscount };
+    const cart = {
+      id,
+      image,
+      title,
+      description,
+      price: priceDiscount ? priceDiscount : price
+    };
     setOnCart(!onCart);
     onCart ? removeFromCart(id) : addToCart(cart);
   }
@@ -34,11 +41,11 @@ export default function Card(props) {
         <section className='prices-container'>
           { priceDiscount ? (
             <div>
-              <span className='price-discount'>{ priceDiscount }</span>
-              <span className='price'>{ price }</span>
+              <span className='current-price'>{ serializePrice(priceDiscount) }</span>
+              <span className='old-price'>{ serializePrice(price) }</span>
             </div>
           ) : (
-            <span className='price'>{ price }</span>
+            <span className='price'>{ serializePrice(price) }</span>
           )}
           </section>
         <section className='cart-container'>

@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import StoreContext from '../context/StoreContext';
 import './styles/cartProduct.css';
+import serializePrice from './utils/serialize';
 
 export default function CartProducts() {
-  const { shoppingCart } = useContext(StoreContext);
+  const { shoppingCart, totalPrice } = useContext(StoreContext);
 
   return (
     <section className='table-container'>
@@ -25,12 +26,12 @@ export default function CartProducts() {
                 </div>
               </td>
               <td>1</td>
-              <td>{ item.priceDiscount ? item.priceDiscount : item.price }</td>
+              <td>{ serializePrice(item.price) }</td>
             </tr>
           </tbody>
         )) }
       </table>
-      <span className='total-price'>TOTAL $10.00</span>
+      <span className='total-price'>{ `Total Price: ${serializePrice(totalPrice)}` }</span>
     </section>
   );
 }
