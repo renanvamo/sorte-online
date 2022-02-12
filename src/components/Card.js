@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import StoreContext from '../context/StoreContext';
+import PropTypes from 'prop-types';
 import './styles/card.css'
 
 export default function Card(props) {
@@ -33,3 +34,12 @@ export default function Card(props) {
     </div>
   );
 }
+
+Card.propTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.number,
+  priceDiscount: PropTypes.number,
+}.isRequired;
