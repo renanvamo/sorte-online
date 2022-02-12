@@ -7,12 +7,15 @@ export default function Header() {
 
   const navigateTo = (path) => {
     navigate(path);
-  } 
+  };
+
   return (
     <header className='header'>
       <div className='nav-left'>
         <div className='nav-element' onClick={ () => navigateTo('/store') }>
-          Home
+          <span className='btn'>
+            Home
+          </span>
         </div>
         <div className='nav-element'>
           Logo
@@ -20,7 +23,9 @@ export default function Header() {
       </div>
       <div className='nav-rigth'>
         <div className='nav-element' onClick={ () => navigateTo('/shopping-cart') }>
-          Cart
+          <span className='btn'>
+            Cart
+          </span>
         </div>
       </div>
     </header>
