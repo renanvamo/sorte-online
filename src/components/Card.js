@@ -45,14 +45,17 @@ export default function Card(props) {
               <span className='old-price'>{ serializePrice(price) }</span>
             </div>
           ) : (
-            <span className='price'>{ serializePrice(price) }</span>
+            <span className='current-price'>{ serializePrice(price) }</span>
           )}
           </section>
-        <section className='cart-container'>
-          <span className='add-to-cart' onClick={ handleClick }>
-            { onCart ? 'in the cart': 'add to cart' }
-          </span>
-        </section>
+      </section>
+      <section className='cart-container'>
+        <span 
+          className={ onCart ? 'add-cart-btn': 'remove-cart-btn' }
+          onClick={ handleClick }
+        >
+          { onCart ? 'in the cart': 'add to cart' }
+        </span>
       </section>
     </div>
   );
