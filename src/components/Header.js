@@ -16,18 +16,18 @@ export default function Header() {
       <div className='nav-left'>
         <div className='nav-element' onClick={ () => navigateTo('/store') }>
           <span className='btn'>
-            Home
+            DS
           </span>
         </div>
         <div className='nav-element'>
-          Logo
+          Dev Store
         </div>
       </div>
       <div className='nav-rigth'>
-        <div className='nav-element' onClick={ () => navigateTo('/shopping-cart') }>
-          <span className='btn'>
-            Cart
-          </span>
+        <div className='btn-cart' onClick={ () => navigateTo('/shopping-cart') }>
+          <img
+            src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/30/ffffff/external-shopping-cart-interface-kiranshastry-solid-kiranshastry-1.png"
+            alt="Shopping cart item" />
           <span>
             { shoppingCart.length }
           </span>
