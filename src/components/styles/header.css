@@ -46,6 +46,7 @@
 .btn-cart {
   background-color: #278A75;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 .btn-cart span {
