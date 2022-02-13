@@ -38,16 +38,14 @@ export default function Card(props) {
       <span className='title'>{ title }</span>
       <p className='description' >{ description }</p>
       <section className='buttons-container'>
-        <section className='prices-container'>
           { priceDiscount ? (
-            <div>
+            <section className='prices-container'>
               <span className='current-price'>{ serializePrice(priceDiscount) }</span>
               <span className='old-price'>{ serializePrice(price) }</span>
-            </div>
+            </section>
           ) : (
             <span className='current-price'>{ serializePrice(price) }</span>
           )}
-          </section>
       </section>
       <section className='cart-container'>
         <span 
