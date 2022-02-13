@@ -1,6 +1,12 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(224, 220, 220);
+  background-color: #278A75;
+  color: #ffffff;
+  font-size: 1.1em;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 10px 10px -8px;
 }
 
 .nav-left {
@@ -8,9 +14,59 @@
 }
 
 .nav-element {
-  padding: 10px;
+  padding: 20px 60px;
 }
 
 .btn {
   cursor: pointer;
+}
+
+.nav-rigth {
+  padding-right: 60px;
+}
+
+.nav-rigth span {
+  font-size: 0.8em;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid white;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: all 150ms linear;
+}
+
+.btn:hover {
+  background: white;
+  color: #278A75;
+  transition: all 250ms linear;
+}
+
+.btn-cart {
+  background-color: #278A75;
+  color: #FFFFFF;
+}
+
+.btn-cart span {
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-cart span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn-cart:hover span {
+  padding-right: 25px;
+}
+
+.btn-cart:hover span:after {
+  opacity: 1;
+  right: 0;
 }
