@@ -52,6 +52,7 @@
 .btn-cart span {
   position: relative;
   transition: 0.5s;
+  font-size: 15px;
 }
 
 .btn-cart span:after {
