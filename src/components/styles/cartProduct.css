@@ -31,3 +31,9 @@ table img {
   text-align: end;
   padding: 20px 100px;
 }
+
+.remove-item {
+  color: rgb(184, 179, 179);
+  font-weight: 900;
+  padding-left: 40px;
+}

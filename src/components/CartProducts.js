@@ -4,7 +4,7 @@ import './styles/cartProduct.css';
 import serializePrice from './utils/serialize';
 
 export default function CartProducts() {
-  const { shoppingCart, totalPrice } = useContext(StoreContext);
+  const { shoppingCart, totalPrice, removeFromCart } = useContext(StoreContext);
 
   return (
     <section className='table-container'>
@@ -26,7 +26,15 @@ export default function CartProducts() {
                 </div>
               </td>
               <td>1</td>
-              <td>{ serializePrice(item.price) }</td>
+              <td>
+                { serializePrice(item.price) }
+                <span
+                  className='remove-item'
+                  onClick={ () => removeFromCart(item.id) }
+                >
+                  X
+                </span>
+              </td>
             </tr>
           </tbody>
         )) }
