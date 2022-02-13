@@ -54,7 +54,7 @@ export default function Card(props) {
           className={ onCart ? 'add-cart-btn': 'remove-cart-btn' }
           onClick={ handleClick }
         >
-          { onCart ? 'in the cart': 'add to cart' }
+          { onCart ? 'remove from cart': 'add to cart +' }
         </span>
       </section>
     </div>

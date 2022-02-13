@@ -54,8 +54,8 @@
 }
 
 .add-cart-btn {
-  border: 1px solid black;
-  background-color: #f5f36f;
+  border: 1px solid #278A75;
+  background-color: white;
   color: #278A75;
   padding: 4px;
   border-radius: 3px;
@@ -64,7 +64,7 @@
 }
 
 .remove-cart-btn {
-  border: 1px solid black;
+  border: 1px solid #278A75;
   background-color: #278A75;
   color: white;
   padding: 4px;
