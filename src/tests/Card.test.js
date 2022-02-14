@@ -47,4 +47,9 @@ describe('Testing component Card', () => {
     expect(screen.getByTestId('current-price')).toHaveTextContent('$4,000.00');
     expect(screen.getByTestId('current-price')).toHaveClass('current-price');
   });
+
+  it('if has a button "add to cart"', () => {
+    renderCard();
+    expect(screen.getByText('add to cart +')).toBeVisible();
+  });
 });
