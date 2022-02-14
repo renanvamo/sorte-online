@@ -33,18 +33,18 @@ export default function Card(props) {
   }
   
   return (
-    <div className='product-card'>
+    <div className='product-card' data-testid='product-card'>
       <img className='card-image' src={ image } alt={ `imagem do produto ${title}` } />
       <span className='title'>{ title }</span>
       <p className='description' >{ description }</p>
       <section className='buttons-container'>
           { priceDiscount ? (
             <section className='prices-container'>
-              <span className='current-price'>{ serializePrice(priceDiscount) }</span>
-              <span className='old-price'>{ serializePrice(price) }</span>
+              <span className='current-price' data-testid='current-price'>{ serializePrice(priceDiscount) }</span>
+              <span className='old-price' data-testid='old-price'>{ serializePrice(price) }</span>
             </section>
           ) : (
-            <span className='current-price'>{ serializePrice(price) }</span>
+            <span className='current-price' data-testid='current-price'>{ serializePrice(price) }</span>
           )}
       </section>
       <section className='cart-container'>
