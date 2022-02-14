@@ -10,6 +10,8 @@ Durante o desenvolvimento do projeto foi utilizada a seguinte biblioteca para ge
 
 * react-router-dom
 
+Também foram utilizados Hooks nos componentes funcionais e ContextAPI para gerenciamento do estado global da aplicação.
+
 Também foram desenvolvidos testes de componentes utilizando as ferramentas:
 
 * RTL
